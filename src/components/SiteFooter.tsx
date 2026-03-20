@@ -13,9 +13,14 @@ export const SiteFooter = () => {
           <div>
             <h4 className="font-body text-xs tracking-[0.2em] uppercase text-gold mb-4">Explore</h4>
             <ul className="space-y-2">
-              {["The Five Pillars", "Guardianship", "Research Archives", "Royal Symposium"].map((l) => (
-                <li key={l}>
-                  <a href="#" className="font-body text-sm text-foreground/50 hover:text-gold transition-colors duration-200">{l}</a>
+              {[
+                { name: "The Five Pillars", href: "/pillars" },
+                { name: "Guardianship", href: "/guardianship" },
+                { name: "Research Archives", href: "/research-archives" },
+                { name: "Royal Symposium", href: "/royal-symposium" },
+              ].map((l) => (
+                <li key={l.name}>
+                  <a href={l.href} className="font-body text-sm text-foreground/50 hover:text-gold transition-colors duration-200">{l.name}</a>
                 </li>
               ))}
             </ul>
@@ -24,9 +29,14 @@ export const SiteFooter = () => {
           <div>
             <h4 className="font-body text-xs tracking-[0.2em] uppercase text-gold mb-4">Institute</h4>
             <ul className="space-y-2">
-              {["About Us", "The Visionaries", "Press & Media", "Contact"].map((l) => (
-                <li key={l}>
-                  <a href="#" className="font-body text-sm text-foreground/50 hover:text-gold transition-colors duration-200">{l}</a>
+              {[
+                { name: "About Us", href: "/about" },
+                { name: "The Visionaries", href: "/visionaries" },
+                { name: "Press & Media", href: "/press" },
+                { name: "Contact", href: "/contact" },
+              ].map((l) => (
+                <li key={l.name}>
+                  <a href={l.href} className="font-body text-sm text-foreground/50 hover:text-gold transition-colors duration-200">{l.name}</a>
                 </li>
               ))}
             </ul>
@@ -34,11 +44,11 @@ export const SiteFooter = () => {
 
           <div>
             <h4 className="font-body text-xs tracking-[0.2em] uppercase text-terracotta mb-4">Return to the Source</h4>
-            <p className="font-body text-sm text-foreground/50 leading-relaxed mb-4">
+            <p className="font-body text-sm text-foreground/50 leading-relaxed mb-4 italic">
               The Diaspora Immersion Programme — a transformative journey to reconnect with your ancestral heritage on the continent.
             </p>
-            <a href="#" className="font-body text-sm font-semibold text-terracotta hover:text-terracotta-light transition-colors duration-200 uppercase tracking-wide">
-              Learn More →
+            <a href="/diaspora" className="font-body text-sm font-semibold text-terracotta hover:text-terracotta-light transition-colors duration-200 uppercase tracking-widest flex items-center gap-2">
+              Learn More <span className="text-lg">→</span>
             </a>
           </div>
         </div>
@@ -50,8 +60,12 @@ export const SiteFooter = () => {
             © {new Date().getFullYear()} The Institute of African Royal Traditions and Customs Practices. All rights reserved.
           </p>
           <div className="flex gap-6">
-            {["Privacy", "Terms", "Accessibility"].map((l) => (
-              <a key={l} href="#" className="font-body text-xs text-foreground/30 hover:text-gold/60 transition-colors duration-200">{l}</a>
+            {[
+              { name: "Privacy", href: "/privacy" },
+              { name: "Terms", href: "/terms" },
+              { name: "Accessibility", href: "/accessibility" },
+            ].map((l) => (
+              <a key={l.name} href={l.href} className="font-body text-xs text-foreground/30 hover:text-gold/60 transition-colors duration-200">{l.name}</a>
             ))}
           </div>
         </div>

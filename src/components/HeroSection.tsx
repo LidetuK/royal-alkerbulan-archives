@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { SecureLegacyDialog } from "@/components/SecureLegacyDialog";
 import heroBg from "@/assets/hero-bg.jpg";
 
 export const HeroSection = () => {
@@ -47,12 +48,14 @@ export const HeroSection = () => {
           transition={{ duration: 0.6, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <button className="px-8 py-4 bg-primary text-primary-foreground font-body font-semibold tracking-wide text-sm uppercase rounded-sm transition-all duration-200 hover:shadow-[0_4px_24px_hsl(43_56%_56%/0.3)] active:scale-[0.97]">
-            Secure Your Legacy
-          </button>
-          <button className="px-8 py-4 border border-gold/30 text-gold font-body font-semibold tracking-wide text-sm uppercase rounded-sm transition-all duration-200 hover:bg-gold/10 hover:border-gold/50 active:scale-[0.97]">
+          <SecureLegacyDialog>
+            <button className="px-8 py-4 bg-primary text-primary-foreground font-body font-semibold tracking-wide text-sm uppercase rounded-sm transition-all duration-200 hover:shadow-[0_4px_24px_hsl(43_56%_56%/0.3)] active:scale-[0.97]">
+              Secure Your Legacy
+            </button>
+          </SecureLegacyDialog>
+          <a href="/guardianship" className="px-8 py-4 border border-gold/30 text-gold font-body font-semibold tracking-wide text-sm uppercase rounded-sm transition-all duration-200 hover:bg-gold/10 hover:border-gold/50 active:scale-[0.97] inline-block text-center cursor-pointer">
             Become a Guardian
-          </button>
+          </a>
         </motion.div>
       </div>
 

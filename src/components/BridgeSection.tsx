@@ -19,7 +19,7 @@ export const BridgeSection = () => {
             Transition from the <span className="text-gold italic">Soul</span> (Tradition) to the <span className="text-terracotta italic">Sword</span> (Strategy). Discover our sister institution.
           </p>
           <a
-            href="#"
+            href="/vanguard"
             className="inline-flex items-center gap-3 px-8 py-4 border border-terracotta/40 text-terracotta font-body font-semibold text-sm tracking-wide uppercase rounded-sm transition-all duration-200 hover:bg-terracotta/10 hover:border-terracotta/60 active:scale-[0.97] group"
           >
             The Institute of Vanguard Leaders
