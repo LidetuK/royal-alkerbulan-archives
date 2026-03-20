@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { ScrollReveal } from "./ScrollReveal";
+import { GuardianshipDialog } from "./GuardianshipDialog";
 import { Eye, BookMarked, Crown } from "lucide-react";
 
 const tiers = [
@@ -41,6 +43,14 @@ const tiers = [
 ];
 
 export const GuardianshipSection = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedTier, setSelectedTier] = useState("The Seeker");
+
+  const openDialog = (tierName: string) => {
+    setSelectedTier(tierName);
+    setDialogOpen(true);
+  };
+
   return (
     <section className="relative py-32">
       <div className="container max-w-6xl px-6">
@@ -85,6 +95,7 @@ export const GuardianshipSection = () => {
                     ))}
                   </ul>
                   <button
+                    onClick={() => openDialog(tier.name)}
                     className={`w-full mt-8 py-3 font-body font-semibold text-sm tracking-wide uppercase rounded-sm transition-all duration-200 active:scale-[0.97] ${
                       tier.featured
                         ? "bg-primary text-primary-foreground hover:shadow-[0_4px_24px_hsl(43_56%_56%/0.3)]"
@@ -99,6 +110,8 @@ export const GuardianshipSection = () => {
           })}
         </div>
       </div>
+
+      <GuardianshipDialog open={dialogOpen} onOpenChange={setDialogOpen} tierName={selectedTier} />
     </section>
   );
 };
